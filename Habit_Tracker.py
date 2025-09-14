@@ -80,13 +80,15 @@ def add_values(data,day,aspect):
     if day not in data["Days"]:
         print("Days not Found")
         return
+    
     if aspect not in data["Days"][day]:
         print("Aspect not found!")
         return
-    for i in data.items:
-        value = input(f["Days"][day][aspect][activity_name])
+    
+    for activity_name in data["Days"][day][aspect]:
+        value = int(input(f"{activity_name} ? "))
 
-
+        data["Days"][day][aspect][activity_name] =value
 
 
 def delete_activity(data, day, aspect, activity_name):
@@ -127,11 +129,22 @@ def update_activity(data,day , aspect, old_activity_name, new_activity_name, def
 
 add_activity(data,"Monday","Spiritual","Fajr")
 add_activity(data,"Monday","Spiritual","Dohr")
+add_activity(data,"Monday","Spiritual","maghreb")
+
 print(json.dumps(data["Days"]["Monday"]["Spiritual"],indent = 4))
 
-delete_activity(data,"Monday","Spiritual","Dohr")
-print(json.dumps(data["Days"]["Monday"]["Spiritual"],indent = 4))
+add_values(data, "Monday", "Spiritual")
 
-update_activity(data,"Monday","Spiritual","Fajr","Asr")
-print(json.dumps(data["Days"]["Monday"]["Spiritual"],indent = 4))
+print("After adding values:")
+print(json.dumps(data["Days"]["Monday"]["Spiritual"], indent=4))
+
+# add_values(data,"Monday","Spiritual")
+# print(json.dumps(data,["Days"]["Monday"]["Spirtual"],indent= 4))
+
+# delete_activity(data,"Monday","Spiritual","Dohr")
+# print(json.dumps(data["Days"]["Monday"]["Spiritual"],indent = 4))
+
+
+# update_activity(data,"Monday","Spiritual","Fajr","Asr")
+# print(json.dumps(data["Days"]["Monday"]["Spiritual"],indent = 4))
 
