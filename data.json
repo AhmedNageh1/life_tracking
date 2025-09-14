@@ -1,0 +1,64 @@
+{
+"Days" :{
+    "Monday":{
+        "Spiritual" :{} ,
+        "Health":{}  ,
+        "Education":{} ,
+        "Finance":{},
+        "Relationships":{}
+    },
+
+    "Tuesday":
+    {
+        "Spiritual" :{} ,
+        "Health":{}  ,
+        "Education":{} ,
+        "Finance":{},
+        "Relationships":{}
+    },
+   "Wednesday":
+    {
+       "Spiritual" :{} ,
+        "Health":{}  ,
+        "Education":{} ,
+        "Finance":{},
+        "Relationships":{}
+    },
+    "Thursday":
+     {
+        "Spiritual" :{} ,
+        "Health":{}  ,
+        "Education":{} ,
+        "Finance":{},
+        "Relationships":{}
+    },
+    "Friday":
+        {
+         "Spiritual" :{} ,
+        "Health":{}  ,
+        "Education":{} ,
+        "Finance":{},
+        "Relationships":{}
+    },
+    "Saturday":
+        {
+         "Spiritual" :{} ,
+        "Health":{}  ,
+        "Education":{} ,
+        "Finance":{},
+        "Relationships":{}
+        },
+    "Sunday":
+        {
+         "Spiritual" :{} ,
+        "Health":{}  ,
+        "Education":{} ,
+        "Finance":{},
+        "Relationships":{}
+    }
+}
+
+}
+
+    
+
