@@ -74,8 +74,7 @@ def add_activity(data, day, aspect, activity_name, default_value=0):
         return
     
     data["Days"][day][aspect][activity_name] = default_value
-
-    
+ 
 def add_values(data,day,aspect):
     if day not in data["Days"]:
         print("Days not Found")
@@ -85,9 +84,6 @@ def add_values(data,day,aspect):
         return
     for i in data.items:
         value = input(f["Days"][day][aspect][activity_name])
-
-
-
 
 def delete_activity(data, day, aspect, activity_name):
     """Delete Existing Activity"""
@@ -102,7 +98,6 @@ def delete_activity(data, day, aspect, activity_name):
         return
     
     del data["Days"][day][aspect][activity_name]
-
 
 def update_activity(data,day , aspect, old_activity_name, new_activity_name, default_value=0):
     """Update Existing Activity"""
@@ -125,6 +120,24 @@ def update_activity(data,day , aspect, old_activity_name, new_activity_name, def
     # Add new activity with same value
     data["Days"][day][aspect][new_activity_name] = value
 
+def calcAspectScoreForDay(aspect : dict) -> int:
+    """aspect: "Spiritual : {}"""
+    total = 0
+    for act, points in aspect.items():
+        total += points
+        pass
+
+    return points
+
+def calcAspectScoreForWeek(days : dict, aspect: str) -> int:
+    """days: "Days : {}"""
+    weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
+    total = 0
+    for weekday in weekdays:
+        total += calcAspectScoreForDay(days[weekday][aspect])  
+    return total
+
 add_activity(data,"Monday","Spiritual","Fajr")
 add_activity(data,"Monday","Spiritual","Dohr")
 print(json.dumps(data["Days"]["Monday"]["Spiritual"],indent = 4))
@@ -135,3 +148,9 @@ print(json.dumps(data["Days"]["Monday"]["Spiritual"],indent = 4))
 update_activity(data,"Monday","Spiritual","Fajr","Asr")
 print(json.dumps(data["Days"]["Monday"]["Spiritual"],indent = 4))
 
+#Score usage
+#Calculating score for Monday
+print(calcAspectScoreForDay(data["Days"]["Monday"]["Spiritual"]))
+
+#Calculating score for Spiritual throughout week
+print(calcAspectScoreForWeek(data["Days"], "Spiritual"))
