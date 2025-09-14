@@ -169,3 +169,4 @@ print(json.dumps(data["Days"]["Monday"]["Spiritual"], indent=4))
 print(calcAspectScoreForDay(data["Days"]["Monday"]["Spiritual"]))
 #Calculating score for Spiritual throughout week
 print(calcAspectScoreForWeek(data["Days"], "Spiritual"))
+#testing
