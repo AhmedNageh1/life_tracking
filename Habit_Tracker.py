@@ -164,3 +164,8 @@ print(json.dumps(data["Days"]["Monday"]["Spiritual"], indent=4))
 # update_activity(data,"Monday","Spiritual","Fajr","Asr")
 # print(json.dumps(data["Days"]["Monday"]["Spiritual"],indent = 4))
 
+#Score usage
+#Calculating score for Monday
+print(calcAspectScoreForDay(data["Days"]["Monday"]["Spiritual"]))
+#Calculating score for Spiritual throughout week
+print(calcAspectScoreForWeek(data["Days"], "Spiritual"))
